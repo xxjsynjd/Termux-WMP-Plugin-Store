@@ -20,13 +20,13 @@ The official plugin repository and web store for TWMPXPEM (Termux-Windows-Media-
 
 ## 📦 我是普通用户，我怎么用？
 在你的 Termux 中配置源并安装：
-\`\`\`bash
+```bash
 # 添加软件源
 echo "wvwhl https://xxjsynjd.github.io/Termux-WMP-Plugin-Store termux-main main" >> $PREFIX/etc/twmpxpem/sources.list
 
 # 安装你想用的特效
 twmpxpem install edm_glowing_sphere
-\`\`\`
+```
 
 ## 🛠️ 核心技术栈
 *   **Package Manager**: 自研 `twmpxpem` (复刻 dpkg/apt 哲学)
