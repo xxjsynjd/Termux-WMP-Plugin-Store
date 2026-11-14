@@ -16,7 +16,7 @@ The official plugin repository and web store for TWMPXPEM (Termux-Windows-Media-
 3. 提交Pull Request。
 *机器人会自动帮你打包、加壳并生成索引，审核通过后瞬间全网上架！*
 
-👉 **[点击这里查看《插件开发指南》(Coming Soon)]** (https://github.com/xxjsynjd/Termux-WMP-Plugin-Store/blob/main/Termux%20Windows%20Media%20Player%20XP%20Extension%20Manager%E6%8F%92%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91/%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C.txt)
+👉 **[点击这里查看《插件开发指南》](./Plugin_Dev_Guide.txt)**
 
 ## 📦 我是普通用户，我怎么用？
 在你的Termux中配置源并安装：
