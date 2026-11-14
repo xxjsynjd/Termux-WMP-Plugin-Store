@@ -1,0 +1,30 @@
+name: Auto Build and Publish Plugins
+
+on:
+  push:
+    paths:
+      - 'plugins/**'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Build .wvwhl and Generate Index
+        run: python generate_index.py
+
+      - name: Commit and Push changes
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Action Bot"
+          git add pool/ Packages.json -f
+          git diff --quiet && git diff --staged --quiet || git commit -m "Auto-build plugins and update Packages.json"
+          git push
