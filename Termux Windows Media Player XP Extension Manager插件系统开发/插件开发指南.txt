@@ -12,7 +12,7 @@ TEMPXPEM插件开发指南
 ================================================================================
 1. 你的插件入口文件必须叫：wmpvisualizer.dll(虽然后缀是dll，但里面是纯Python代码(。
 2. 你的插件必须实现两个函数：audio_tick和video_render。
-3. 你的插件必须有一个 twmpxpem-project.toml配置文件，且必须写明category(分类)。
+3. 你的插件必须有一个twmpxpem-project.toml配置文件，且必须写明category(分类)。
 
 ================================================================================
 二、 最小插件模板(直接复制就能用)
@@ -42,7 +42,7 @@ def audio_tick(data, spectrum, dt):
     参数:
       data     : 预留参数，目前传None
       spectrum : 字典，包含'bass'(低音能量)和'treble'(高音能量)，范围0.0~1.0
-      dt       : 帧间隔时间，固定为 1/30 秒
+      dt       : 帧间隔时间，固定为1/30秒
     """
     global _state
     if not _state:
@@ -56,7 +56,7 @@ def video_render(screen, data, audio_data):
     """
     【画面渲染】在内存画布上绘制你的画面。
     参数:
-      screen     : Pygame Surface 对象，尺寸就是视频分辨率(如1280x720)
+      screen     : Pygame Surface对象，尺寸就是视频分辨率(如1280x720)
       data       : 预留参数，目前传None
       audio_data : 与audio_tick中的spectrum相同
     """
@@ -70,12 +70,13 @@ def video_render(screen, data, audio_data):
 ================================================================================
 1. 把上面两个文件放进一个文件夹，比如my_first_filter/。
 2. 在终端进入该文件夹的上一级目录。
-3. 打包成 .wvwhl 包（本质上是 zip）：
+3. 打包成.wvwhl包(本质上是zip)：
    zip -r my_first_filter.wvwhl my_first_filter/*
 4. 用包管理器安装：
    twmpxpem install my_first_filter.wvwhl
 5. 运行引擎测试：
    wmpvisualizer1 -i 你的音频.mp3 -s my_first_filter -p video-effects -o 测试.mp4
+*   目前正在改进，尝试使用GPG加密验证。
 
 ================================================================================
 四、 绘制API速查(Pygame常用函数)
@@ -86,11 +87,11 @@ def video_render(screen, data, audio_data):
 - 画线：    pygame.draw.line(screen, (R,G,B), (x1,y1), (x2,y2), 线宽)
 - 画矩形：  pygame.draw.rect(screen, (R,G,B), (x, y, 宽, 高), 线宽)
 - 画多边形：pygame.draw.polygon(screen, (R,G,B), [(x1,y1), (x2,y2), ...], 线宽)
-- 画文字：  先 pygame.font.Font(字体路径, 字号).render("文字", True, (R,G,B))，
-           再 screen.blit(文字Surface, (x, y))
-- 贴图片：  用 pygame.image.load("图片路径")，然后 screen.blit(图片, (x, y))
-- 半透明效果：用 pygame.Surface((w,h), pygame.SRCALPHA) 创建带透明通道的画布，
-           在上面画图后，再用 screen.blit() 贴到主画布上。
+- 画文字：  先pygame.font.Font(字体路径, 字号).render("文字", True, (R,G,B))，
+           再screen.blit(文字Surface, (x, y))
+- 贴图片：  用pygame.image.load("图片路径")，然后 screen.blit(图片, (x, y))
+- 半透明效果：用pygame.Surface((w,h), pygame.SRCALPHA)创建带透明通道的画布，
+           在上面画图后，再用screen.blit()贴到主画布上。
 
 ================================================================================
 五、 开发注意事项(避坑指南)
@@ -104,7 +105,7 @@ def video_render(screen, data, audio_data):
 六、 灵感：你可以做什么特效？
 ================================================================================
 - 频谱柱状图(Bars Spectrum)
-- 5.1 / 7.1 环绕声五边形/七边形矩阵
+- 5.1/7.1环绕声五边形/七边形矩阵
 - 赛博朋克故障艺术(Glitch Art)
 - 粒子引力场(Bass爆发时粒子向中心坍缩)
 - 示波器波形(用pygame.draw.lines)画真实波形)
