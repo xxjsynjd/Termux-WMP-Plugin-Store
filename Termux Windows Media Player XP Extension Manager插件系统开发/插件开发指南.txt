@@ -114,7 +114,7 @@ def video_render(screen, data, audio_data):
 ================================================================================
 七、 遇到问题怎么办？
 ================================================================================
-如果引擎报错“缺少audio_tick或video_render 函数”，请检查你的wmpvisualizer.dll里是否
+如果引擎报错“缺少audio_tick或video_render函数”，请检查你的wmpvisualizer.dll里是否
 正确定义了这两个函数，并且缩进正确(必须是顶层函数，不要在class里)。
 如果报错“分类不匹配”，请检查你的twmpxpem-project.toml里category字段是否和-p参数一致。
 
