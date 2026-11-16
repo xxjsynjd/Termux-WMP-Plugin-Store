@@ -1,4 +1,4 @@
-# Termux-WMP-Plugin-Store
+8# Termux-WMP-Plugin-Store
 The official plugin repository and web store for TWMPXPEM (Termux-Windows-Media-Player-XP-Extension-Manager).
 # 🚀 TWMXPEM插件商店(Termux WMP Plugin Store)
 
@@ -32,3 +32,4 @@ twmpxpem install edm_glowing_sphere
 *   **Package Manager**: 自研 `twmpxpem`(复刻dpkg/apt哲学)
 *   **Rendering Engine**: `wmpvisualizer1`(FFmpeg+多声道FFT)
 *   **Automation**: GitHub Actions自动打包与加壳
+*   目前该包的管理器正在改进中。
